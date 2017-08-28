@@ -28,6 +28,12 @@ CREATE TABLE CAR (
   PRIMARY KEY (ID)
 );
 
+CREATE TABLE auto_prices (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  car_id INT REFERENCES car(id),
+  package VARCHAR2(15) NOT NULL,
+  price NUMBER(10,2) NOT NULL CHECK(price > 0)
+);
 
 DROP SEQUENCE hibernate_sequence;
 
