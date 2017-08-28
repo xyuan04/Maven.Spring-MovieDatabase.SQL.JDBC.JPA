@@ -25,14 +25,16 @@ CREATE TABLE CAR (
   MAKE VARCHAR2(255) not null default '',
   MODEL varchar2(255) NOT NULL DEFAULT '',
   YEAR VARCHAR2(5) NOT NULL DEFAULT '01907',
-  PRIMARY KEY (ID)
+  PRIMARY KEY (ID),
+  CONSTRAINT 'unique_make_model_year' UNIQUE (make, model, year)
 );
 
 CREATE TABLE auto_prices (
   id INT PRIMARY KEY AUTO_INCREMENT,
   car_id INT REFERENCES car(id),
   package VARCHAR2(15) NOT NULL,
-  price NUMBER(10,2) NOT NULL CHECK(price > 0)
+  price NUMBER(10,2) NOT NULL CHECK(price > 0),
+  CONSTRAINT 'unique_package_per_car' UNIQUE (car_id, package)
 );
 
 DROP SEQUENCE hibernate_sequence;
