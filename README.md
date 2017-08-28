@@ -4,7 +4,7 @@
 
 The following lab is to be completed using the H2 Console. Once you have figured out the correct queries for each step, save a copy in a file called `src/main/resources/script.sql`. This will be how you submit this assignment. If at any time you need to reset the database, you can restart your Spring Boot server.
 
-### Campy movie database
+### Mini Movie Database
 
 Add the following movies to the `movies` table using an insert statement:
 
@@ -28,6 +28,8 @@ For parents who have young kids, but who don't want to sit through long children
 Create a query to show the average runtimes of movies rated below a 7.5, grouped by their respective genres.
 
 There's been a data entry mistake; Starship Troopers is actually rated R, not PG-13. Create a query that finds the movie by its title and changes its rating to R.
+
+Show the ID number and rating of all of the Horror and Documentary movies in the database. Do this in only one query.
 
 This time let's find the average, maximum, and minimum IMDB score for movies of each rating.
 
