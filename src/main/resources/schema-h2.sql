@@ -17,6 +17,17 @@ CREATE TABLE HOME (
   PRIMARY KEY (ID)
 );
 
+DROP TABLE movies;
+
+CREATE TABLE movies (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR2(100) NOT NULL UNIQUE,
+  runtime SMALLINT NOT NULL,
+  genre VARCHAR2(50),
+  imdb_score NUMBER(10,1),
+  rating VARCHAR2(10)
+);
+
 
 -- Tables for in-class example
 
