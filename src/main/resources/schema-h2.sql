@@ -18,16 +18,20 @@ CREATE TABLE HOME (
 );
 
 
-DROP TABLE CAR;
+-- Tables for in-class example
 
-CREATE TABLE CAR (
-  ID INT NOT NULL AUTO_INCREMENT,
-  MAKE VARCHAR2(255) not null default '',
-  MODEL varchar2(255) NOT NULL DEFAULT '',
-  YEAR VARCHAR2(5) NOT NULL DEFAULT '01907',
-  PRIMARY KEY (ID),
+DROP TABLE cars;
+
+CREATE TABLE cars (
+  id INT NOT NULL AUTO_INCREMENT,
+  make VARCHAR2(50) NOT NULL DEFAULT '',
+  model VARCHAR2(50) NOT NULL DEFAULT '',
+  year VARCHAR2(5) NOT NULL DEFAULT '01907',
+  PRIMARY KEY (id),
   CONSTRAINT 'unique_make_model_year' UNIQUE (make, model, year)
 );
+
+DROP TABLE auto_prices;
 
 CREATE TABLE auto_prices (
   id INT PRIMARY KEY AUTO_INCREMENT,
