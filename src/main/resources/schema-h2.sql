@@ -1,4 +1,4 @@
-DROP TABLE PERSON;
+DROP TABLE IF EXISTS PERSON;
 
 CREATE TABLE PERSON (
   ID INT NOT NULL AUTO_INCREMENT,
@@ -8,7 +8,7 @@ CREATE TABLE PERSON (
   BIRTHDAY DATE DEFAULT NULL,
   PRIMARY KEY (ID));
 
-DROP TABLE HOME;
+DROP TABLE IF EXISTS HOME;
 
 CREATE TABLE HOME (
   ID INT NOT NULL AUTO_INCREMENT,
@@ -17,7 +17,7 @@ CREATE TABLE HOME (
   PRIMARY KEY (ID)
 );
 
-DROP TABLE movies;
+DROP TABLE IF EXISTS movies;
 
 CREATE TABLE movies (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -28,10 +28,9 @@ CREATE TABLE movies (
   rating VARCHAR2(10)
 );
 
-
 -- Tables for in-class example
 
-DROP TABLE cars;
+DROP TABLE IF EXISTS cars;
 
 CREATE TABLE cars (
   id INT NOT NULL AUTO_INCREMENT,
@@ -39,17 +38,20 @@ CREATE TABLE cars (
   model VARCHAR2(50) NOT NULL DEFAULT '',
   year VARCHAR2(5) NOT NULL DEFAULT '01907',
   PRIMARY KEY (id),
-  CONSTRAINT 'unique_make_model_year' UNIQUE (make, model, year)
+  CONSTRAINT unique_make_model_year UNIQUE (make, model, year)
+
 );
 
-DROP TABLE auto_prices;
+DROP TABLE IF EXISTS auto_prices;
 
 CREATE TABLE auto_prices (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  car_id INT REFERENCES car(id),
+  car_id INT REFERENCES cars(id),
   package VARCHAR2(15) NOT NULL,
   price NUMBER(10,2) NOT NULL CHECK(price > 0),
-  CONSTRAINT 'unique_package_per_car' UNIQUE (car_id, package)
+  CONSTRAINT unique_package_per_car UNIQUE (car_id, package)
+
+
 );
 
 DROP SEQUENCE hibernate_sequence;
