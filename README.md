@@ -68,3 +68,59 @@ Create the following REST endpoints to interact with the application. You can us
  - `GET` `/people/surname` -- Get the result of the surname report above
  - `GET` `/people/firstname/stats` -- Get the report of first name frequencies
  
+ 
+ 
+ 
+#### Homes and People 
+There is another table in the data base named home that consist of the following
+fields:
+
+| ID | ADDRESS | HOMENUMBER |
+|----|---------|------------|
+
+People in the 'Person' table are able to have a home from the 'Home' table associated with them.
+People are mapped to homes through their 'HOME_ID' value which is a foreign key that references the id column in the 'HOME' table
+
+Add the following homes to the 'HOME' table
+
+|       Address         |    Home Number    |
+|-----------------------|-------------------|
+| 36 E. Bayberry Rd.Savannah, GA 31404 | 565-6895 |
+| 11 Essex Dr.Farmingdale, NY 11735 | 454-4544 |
+| 920 Arlington Street Clifton, NJ 07011 | 985-4515 |
+| 234 High Street, PA 19159 | 267-3940 |
+
+
+_You may use the query in the 'data-h2.sql' file to populate the 'PERSON' and 'HOME' table_
+
+
+
+Support the following operations:
+- Add a "Home" to the database
+- Add a person to a home 
+- Update an existing 'Home' in the database
+- Remove a home from the database
+- Remove a list of homes from the database
+- Find a home by id
+- Find a hom by home number
+- Find a home by address
+- Find a home by person id
+- Generate a list of people that live in a home
+
+
+
+
+List all of the homes that have more that one person that live there. Group people by the home that they 
+live in 
+
+List all of the people that live a the address _11 Essex Dr.Farmingdale, NY 11735_
+ 
+Create a query to update a person's home
+
+Create a query to update a person's 'HOMENUMBER"
+
+Find the home number of John Smith
+
+
+
+
