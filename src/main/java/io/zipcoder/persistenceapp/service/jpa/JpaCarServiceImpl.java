@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 /**
  *
  */
-@Primary
 @Service
 public class JpaCarServiceImpl implements CarService {
 
@@ -38,7 +37,7 @@ public class JpaCarServiceImpl implements CarService {
 
     @Override
     public Iterable<Car> getSalesPackages() {
-        return carRepository.findAll().stream().filter(car -> car.getSalesPackages().size() > 0).collect(Collectors.toList());
+        return carRepository.findAll().stream().filter(car -> car.getAutoPrices().size() > 0).collect(Collectors.toList());
     }
 
     @Override

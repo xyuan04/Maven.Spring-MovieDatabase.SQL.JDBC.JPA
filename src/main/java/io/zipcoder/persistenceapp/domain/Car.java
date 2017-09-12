@@ -14,7 +14,7 @@ import java.util.List;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
 
     private String make;
@@ -22,7 +22,7 @@ public class Car {
     private String year;
 
     @OneToMany
-    private List<SalesPackage> salesPackages = new LinkedList<>();
+    private List<SalesPackage> autoPrices = new LinkedList<>();
 
     public Car() {
     }
@@ -59,11 +59,11 @@ public class Car {
     }
 
     public void addPackage(SalesPackage sp){
-        salesPackages.add(sp);
+        autoPrices.add(sp);
     }
 
-    public List<SalesPackage> getSalesPackages(){
-        return Collections.unmodifiableList(salesPackages);
+    public List<SalesPackage> getAutoPrices(){
+        return Collections.unmodifiableList(autoPrices);
     }
 
     public int getId() {

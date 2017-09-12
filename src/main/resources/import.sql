@@ -1,9 +1,4 @@
-INSERT INTO cars (make, model, year)
-VALUES
-  ('Honda', 'Accord', 2012),
-  ('Toyota', 'Camry', 2014),
-  ('Honda', 'Civic', 2015),
-  ('Subaru', 'Legacy', 2018);
+INSERT INTO cars (make, model, year) VALUES ('Honda', 'Accord', 2012), ('Toyota', 'Camry', 2014), ('Honda', 'Civic', 2015), ('Subaru', 'Legacy', 2018);
 
 INSERT INTO auto_prices (car_id, package, price)
 VALUES (2, 'Economy', 15000);

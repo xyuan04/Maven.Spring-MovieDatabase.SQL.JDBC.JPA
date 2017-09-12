@@ -17,6 +17,18 @@ public class SalesPackage {
     private String pkgName;
     private BigDecimal price;
 
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
 
     public int getId() {
         return id;
