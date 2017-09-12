@@ -68,9 +68,6 @@ Create the following REST endpoints to interact with the application. You can us
  - `GET` `/people/surname` -- Get the result of the surname report above
  - `GET` `/people/firstname/stats` -- Get the report of first name frequencies
  
- 
- 
- 
 #### Homes and People 
 There is another table in the data base named home that consist of the following
 fields:
@@ -102,7 +99,7 @@ Support the following operations:
 - Remove a home from the database
 - Remove a list of homes from the database
 - Find a home by id
-- Find a hom by home number
+- Find a home by home number
 - Find a home by address
 - Find a home by person id
 - Generate a list of people that live in a home
@@ -123,4 +120,14 @@ Find the home number of John Smith
 
 
 
+## Part 3: JPA
+ 
+In this section we're going to re-create our service class using JPA. 
 
+Start by breaking your `PersonService` class into an interface and implementation eg: `interface PersonService` and `class jdbcPersonServiceImpl`. Place the `@Service` annotation on the implementation class.
+
+Now create a new class that implements the PersonService, this time with JPA. Once you annotate this class with @Service you will get an error when you start spring -- you can fix this by annotation the service you want to use with `@Primary` -- This tells Spring that if there are multiple beans competing for autowiring, the one marked with `@Primary` should be used (this won't work if multiple competing beans are marked `@Primary`
+
+Implement all of the methods found in your `PersonService` interface in this new JPA-based service. You won't have to change your controller at all if you are autowiring a reference to a `PersonService` - Spring will automatically inject the `@Primary`-annotated implementation of `PersonService`
+
+Remember that you won't be using the Jdbc service or any `JdbcTemplate` objects in this part of the lab.
