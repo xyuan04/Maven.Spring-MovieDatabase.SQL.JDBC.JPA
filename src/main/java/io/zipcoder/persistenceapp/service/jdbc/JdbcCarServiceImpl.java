@@ -89,6 +89,13 @@ public class JdbcCarServiceImpl implements CarService {
 
     }
 
-    
+    @Override
+    public void addCar(Car car) {
+        jdbcTemplate.update("INSERT INTO CARS (make, model, year) VALUES (?, ?, ?)",
+                car.getMake(),
+                car.getModel(),
+                car.getYear());
+    }
+
 
 }

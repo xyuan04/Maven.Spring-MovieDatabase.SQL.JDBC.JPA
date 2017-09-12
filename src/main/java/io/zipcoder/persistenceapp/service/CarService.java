@@ -17,4 +17,7 @@ public interface CarService {
     Iterable<Car> getSalesPackages();
 
     Iterable<Car> getSalesPackagesForYear(String year);
+
+    void addCar(Car car);
+
 }
