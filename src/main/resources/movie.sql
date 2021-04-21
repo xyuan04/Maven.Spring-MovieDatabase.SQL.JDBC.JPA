@@ -28,3 +28,11 @@ VALUES ('Spaceballs', 96, 'Comendy', 7.1, 'PG');
 INSERT INTO movies.movie (title, runtime, genre, imdb_score, rating)
 VALUES ('Monsters Inc.', 92, 'Animation', 8.1, 'G');
 
+INSERT INTO movies.movie (title, runtime, genre, imdb_score, rating)
+VALUES ('Avengers', 143, 'Action', 8.0, 'PG-13');
+
+INSERT INTO movies.movie (title, runtime, genre, imdb_score, rating)
+VALUES ('Mr. Bean''s Holiday', 90, 'Comedy', 6.4, 'G');
+
+INSERT INTO movies.movie (title, runtime, genre, imdb_score, rating)
+VALUES ('Memento', 113, 'Mystery', 8.4, 'R');
